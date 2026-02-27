@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pitch Data — PrachanBin</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/pitch.css">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="logo"><div class="logo-dot"></div>PrachanBin</div>
+    <div class="nav-links">
+      <a href="../index.html">Overview</a>
+      <a href="pitch.html" class="active">Pitch Data</a>
+      <a href="qr-result.html">QR Demo</a>
+      <a href="cost.html">Cost & ROI</a>
+    </div>
+  </nav>
+
+  <main class="pitch-page">
+
+    <!-- ── PAGE HEADER ── -->
+    <div class="pitch-header reveal">
+      <div class="ph-eyebrow">Tha Prachan Case Competition · TU 2026</div>
+      <h1 class="ph-title">Pitch Data & Research</h1>
+      <p class="ph-sub">ข้อมูลเชิงลึกสำหรับ Presentation — Market, Architecture, GTM, Financial, Roadmap</p>
+    </div>
+
+    <!-- ══════════════════════════════════
+         1. MARKET DATA
+    ══════════════════════════════════ -->
+    <section class="pitch-section reveal">
+      <h2 class="section-title">📊 Market Data & Context</h2>
+
+      <div class="market-grid">
+        <div class="market-card big-num">
+          <div class="mc-label">Global Smart Waste Market (2024)</div>
+          <div class="mc-big">$2.73B</div>
+          <div class="mc-sub">คาดแตะ $3.17B ในปี 2025 · CAGR 16% ถึง 2035</div>
+          <div class="mc-source">Source: Verified Market Reports, 2024</div>
+        </div>
+        <div class="market-card big-num">
+          <div class="mc-label">Asia-Pacific CAGR (เร็วที่สุดในโลก)</div>
+          <div class="mc-big" style="color:var(--blue)">16.23%</div>
+          <div class="mc-sub">ขับเคลื่อนโดย Smart City + IoT + นโยบายรัฐ</div>
+          <div class="mc-source">Source: Mordor Intelligence, 2025</div>
+        </div>
+        <div class="market-card big-num">
+          <div class="mc-label">ขยะกรุงเทพ (เก็บจริงทุกวัน)</div>
+          <div class="mc-big" style="color:var(--red)">9,238 T</div>
+          <div class="mc-sub">ตัน/วัน — 49% คือขยะอาหาร</div>
+          <div class="mc-source">Source: BMA Report, FY2024</div>
+        </div>
+        <div class="market-card big-num">
+          <div class="mc-label">Plastic Waste ในย่านท่องเที่ยว BKK</div>
+          <div class="mc-big" style="color:var(--amber)">16,800 T</div>
+          <div class="mc-sub">ตัน/ปี — บางส่วนรั่วไหลลงแม่น้ำ</div>
+          <div class="mc-source">Source: UNDP Thailand, 2023</div>
+        </div>
+      </div>
+
+      <div class="findings-block reveal">
+        <div class="fb-title">🔑 Key Findings จากงานวิจัยนานาชาติ</div>
+        <div class="findings-grid">
+          <div class="finding-item">
+            <div class="fi-num">50%</div>
+            <div class="fi-text">Smart Bin + Fill-level sensor ลดต้นทุนจัดการขยะได้ถึง 50% ในหลายเมือง</div>
+            <div class="fi-src">IoT Smart Cities Review, 2022</div>
+          </div>
+          <div class="finding-item">
+            <div class="fi-num">60%</div>
+            <div class="fi-text">Pilot Smart Bin ในอินเดียลดการ complain จากประชาชนลง 60% และลด fuel ใช้รถเก็บ 30%</div>
+            <div class="fi-src">Frontiers in Sustainability, 2025</div>
+          </div>
+          <div class="finding-item">
+            <div class="fi-num">95%</div>
+            <div class="fi-text">เกาหลีใต้ยก recycling rate ขยะอาหารถึง 95% ด้วย Pay-as-you-throw ใน 6 ปี</div>
+            <div class="fi-src">Seoul Environmental Research, 2023</div>
+          </div>
+          <div class="finding-item">
+            <div class="fi-num">88%</div>
+            <div class="fi-text">ฮอยอัน เวียดนาม ทำให้ครัวเรือน 88% แยกขยะได้จริงใน 5 ปี ด้วย Community approach</div>
+            <div class="fi-src">UNEP Hội An Case Study, 2022</div>
+          </div>
+          <div class="finding-item">
+            <div class="fi-num">€555K</div>
+            <div class="fi-text">บาร์เซโลน่าประหยัดค่าจัดการขยะ €555,000/ปี จาก IoT Sensor 18,000+ จุด</div>
+            <div class="fi-src">Frontiers in Sustainability, 2025</div>
+          </div>
+          <div class="finding-item">
+            <div class="fi-num">70%</div>
+            <div class="fi-text">ภายในปี 2030 คาดว่า 70% ของเมืองใหญ่ทั่วโลกจะใช้ Smart Waste อย่างน้อย 1 รูปแบบ</div>
+            <div class="fi-src">Smart Waste Trends, 2025</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         2. TECHNICAL ARCHITECTURE
+    ══════════════════════════════════ -->
+    <section class="pitch-section reveal">
+      <h2 class="section-title">🏗️ Technical Architecture</h2>
+
+      <div class="arch-diagram">
+        <!-- Layer 1: Physical -->
+        <div class="arch-layer">
+          <div class="layer-label">LAYER 1 · Physical Hardware</div>
+          <div class="arch-row">
+            <div class="arch-box hw">
+              <div class="ab-icon">🗑️</div>
+              <div class="ab-title">Smart Bin Unit</div>
+              <div class="ab-spec">HDPE 3-chamber + Vinyl wrap</div>
+            </div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-box hw">
+              <div class="ab-icon">🔍</div>
+              <div class="ab-title">Sensor Array</div>
+              <div class="ab-spec">IR (GP2Y0A21) × 2<br>Ultrasonic (HC-SR04) × 3<br>Weight Sensor (HX711)</div>
+            </div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-box hw">
+              <div class="ab-icon">⚡</div>
+              <div class="ab-title">Actuator</div>
+              <div class="ab-spec">Servo MG90S × 2<br>Diverter gate mechanism<br>Gravity-assisted drop</div>
+            </div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-box hw">
+              <div class="ab-icon">📺</div>
+              <div class="ab-title">Display</div>
+              <div class="ab-spec">2.8" TFT ILI9341<br>QR Code realtime<br>Thank-you message</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Layer 2: Controller -->
+        <div class="arch-connector">↕ SPI / GPIO / I2C</div>
+        <div class="arch-layer">
+          <div class="layer-label">LAYER 2 · Controller (Brain)</div>
+          <div class="arch-row center">
+            <div class="arch-box ctrl">
+              <div class="ab-icon">🧠</div>
+              <div class="ab-title">ESP32 DevKit</div>
+              <div class="ab-spec">
+                Dual-core 240MHz · 520KB SRAM<br>
+                WiFi 802.11 b/g/n (built-in)<br>
+                Bluetooth 4.2 (built-in)<br>
+                Firmware: MicroPython / C++<br>
+                SD Card logging (offline mode)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Layer 3: Network -->
+        <div class="arch-connector">↕ WiFi / HTTPS</div>
+        <div class="arch-layer">
+          <div class="layer-label">LAYER 3 · Cloud & Backend</div>
+          <div class="arch-row">
+            <div class="arch-box cloud">
+              <div class="ab-icon">🔥</div>
+              <div class="ab-title">Firebase Firestore</div>
+              <div class="ab-spec">Realtime DB<br>Waste log per session<br>Free Spark plan</div>
+            </div>
+            <div class="arch-arrow">↔</div>
+            <div class="arch-box cloud">
+              <div class="ab-icon">🌐</div>
+              <div class="ab-title">Web App (Vercel/GH Pages)</div>
+              <div class="ab-spec">QR Result Page<br>Community Dashboard<br>Admin Panel</div>
+            </div>
+            <div class="arch-arrow">↔</div>
+            <div class="arch-box cloud">
+              <div class="ab-icon">📊</div>
+              <div class="ab-title">Analytics</div>
+              <div class="ab-spec">Waste type breakdown<br>Fill-level alerts<br>Heatmap per bin</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Layer 4: User -->
+        <div class="arch-connector">↕ QR Scan / Browser</div>
+        <div class="arch-layer">
+          <div class="layer-label">LAYER 4 · User Experience</div>
+          <div class="arch-row">
+            <div class="arch-box ux">
+              <div class="ab-icon">📱</div>
+              <div class="ab-title">QR Result Page</div>
+              <div class="ab-spec">Session ID · ขยะที่ทิ้ง<br>CO₂ ลดได้ · EcoPoints<br>Share บน Social</div>
+            </div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-box ux">
+              <div class="ab-icon">🏘️</div>
+              <div class="ab-title">Community Dashboard</div>
+              <div class="ab-spec">Realtime ย่านพระนคร<br>วันนี้ลดขยะได้เท่าไร<br>Leaderboard</div>
+            </div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-box ux">
+              <div class="ab-icon">🌐</div>
+              <div class="ab-title">Main Website</div>
+              <div class="ab-spec">PrachanBin landing<br>About · Impact · Donate<br>Expand to other districts</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tech Stack -->
+      <div class="tech-stack reveal">
+        <div class="ts-title">Tech Stack สรุป</div>
+        <div class="ts-grid">
+          <div class="ts-item"><span class="ts-cat">Firmware</span><span class="ts-val">C++ / MicroPython · Arduino IDE</span></div>
+          <div class="ts-item"><span class="ts-cat">Frontend</span><span class="ts-val">HTML / CSS / JS · GitHub Pages</span></div>
+          <div class="ts-item"><span class="ts-cat">Database</span><span class="ts-val">Firebase Firestore (Free)</span></div>
+          <div class="ts-item"><span class="ts-cat">QR Gen</span><span class="ts-val">qrcode.js (ESP32 local) + web render</span></div>
+          <div class="ts-item"><span class="ts-cat">Hosting</span><span class="ts-val">GitHub Pages (Free)</span></div>
+          <div class="ts-item"><span class="ts-cat">Design</span><span class="ts-val">Figma · Vinyl Wrap Print</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         3. GO-TO-MARKET STRATEGY
+    ══════════════════════════════════ -->
+    <section class="pitch-section reveal">
+      <h2 class="section-title">🚀 Go-to-Market Strategy</h2>
+
+      <div class="gtm-phases">
+
+        <div class="gtm-phase reveal">
+          <div class="gp-header">
+            <div class="gp-badge" style="background:rgba(0,255,136,0.15);color:var(--green)">Phase 1 · Month 1-3</div>
+            <div class="gp-title">🔧 Build & Validate</div>
+          </div>
+          <div class="gp-body">
+            <div class="gp-col">
+              <div class="gp-col-title">Target</div>
+              <div class="gp-item">📍 3 จุด Pilot: ท่าพระจันทร์, หน้าวัดพระแก้ว, ถนนมหาราช</div>
+              <div class="gp-item">👥 กลุ่มหลัก: นักท่องเที่ยวไทย + ต่างชาติ, นักศึกษา TU</div>
+            </div>
+            <div class="gp-col">
+              <div class="gp-col-title">Action</div>
+              <div class="gp-item">🛠️ ประกอบ 3 Smart Bin (TU Engineering ช่วย)</div>
+              <div class="gp-item">🌐 Launch เว็บ + QR System</div>
+              <div class="gp-item">📊 เก็บ data: ใครทิ้งอะไร เวลาไหน</div>
+            </div>
+            <div class="gp-col">
+              <div class="gp-col-title">KPI</div>
+              <div class="gp-item">🎯 300+ scans/เดือน</div>
+              <div class="gp-item">🎯 Sorting accuracy ≥ 80%</div>
+              <div class="gp-item">🎯 0 hardware failure</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gtm-phase reveal">
+          <div class="gp-header">
+            <div class="gp-badge" style="background:rgba(48,213,255,0.15);color:var(--blue)">Phase 2 · Month 4-6</div>
+            <div class="gp-title">📣 Awareness Campaign</div>
+          </div>
+          <div class="gp-body">
+            <div class="gp-col">
+              <div class="gp-col-title">Influencer Strategy</div>
+              <div class="gp-item">🎥 Micro-influencer 5 คน (1-5 หมื่น followers)</div>
+              <div class="gp-item">📍 Content: มาลองใช้ Smart Bin ที่พระนคร</div>
+              <div class="gp-item">🔁 "Prachan Challenge" บน TikTok/IG</div>
+            </div>
+            <div class="gp-col">
+              <div class="gp-col-title">Partnership</div>
+              <div class="gp-item">🏛️ BMA — ขอ WiFi + ไฟฟ้าสาธารณะ</div>
+              <div class="gp-item">🗺️ TAT — โปรโมทใน "ย่านเก่าน่าเที่ยว"</div>
+              <div class="gp-item">🏪 ร้านค้าในย่าน — QR ลิงก์โปรโมชั่น</div>
+            </div>
+            <div class="gp-col">
+              <div class="gp-col-title">KPI</div>
+              <div class="gp-item">🎯 500K+ reach ใน 3 เดือน</div>
+              <div class="gp-item">🎯 1,000+ QR scans/เดือน</div>
+              <div class="gp-item">🎯 ขยะแยกถูก ≥ 85%</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gtm-phase reveal">
+          <div class="gp-header">
+            <div class="gp-badge" style="background:rgba(255,184,48,0.15);color:var(--amber)">Phase 3 · Month 7-12</div>
+            <div class="gp-title">📈 Scale & Sustain</div>
+          </div>
+          <div class="gp-body">
+            <div class="gp-col">
+              <div class="gp-col-title">Expand</div>
+              <div class="gp-item">🗺️ ขยาย 3 → 15 ถัง ทั่วย่านพระนคร</div>
+              <div class="gp-item">🔄 เริ่ม Circular loop: ปุ๋ยหมัก → ขาย → ดูแลถัง</div>
+              <div class="gp-item">📊 Dashboard สาธารณะ realtime</div>
+            </div>
+            <div class="gp-col">
+              <div class="gp-col-title">Revenue Stream</div>
+              <div class="gp-item">💰 ขายขยะรีไซเคิล → ~3,000฿/เดือน</div>
+              <div class="gp-item">🌱 ขายปุ๋ยหมัก → ~2,900฿/เดือน</div>
+              <div class="gp-item">🏢 Corporate CSR sponsorship</div>
+            </div>
+            <div class="gp-col">
+              <div class="gp-col-title">KPI</div>
+              <div class="gp-item">🎯 ลดขยะในพื้นที่ 60%</div>
+              <div class="gp-item">🎯 2M+ reach สะสม</div>
+              <div class="gp-item">🎯 Self-sustaining ปีที่ 2</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Competitor Comparison -->
+      <div class="competitor-block reveal">
+        <div class="cb-title">🆚 เปรียบเทียบกับแนวทางอื่น</div>
+        <div class="comp-table-wrap">
+          <table class="comp-table">
+            <thead>
+              <tr>
+                <th>เกณฑ์</th>
+                <th class="hl">PrachanBin ✅</th>
+                <th>ถังขยะปกติ</th>
+                <th>รณรงค์อย่างเดียว</th>
+                <th>Smart Bin นำเข้า</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>ต้นทุนต่อถัง</td><td class="hl">6,670฿</td><td>2,000฿</td><td>0฿</td><td>60,000฿+</td></tr>
+              <tr><td>แยกขยะอัตโนมัติ</td><td class="hl">✅ ใช่</td><td>❌ ไม่</td><td>❌ ไม่</td><td>✅ ใช่</td></tr>
+              <tr><td>Gamification / QR</td><td class="hl">✅ ใช่</td><td>❌ ไม่</td><td>⚠️ บางส่วน</td><td>❌ ส่วนใหญ่ไม่</td></tr>
+              <tr><td>ผลิตในไทย</td><td class="hl">✅ ใช่</td><td>✅ ใช่</td><td>-</td><td>❌ นำเข้า</td></tr>
+              <tr><td>Scalable ง่าย</td><td class="hl">✅ มาก</td><td>✅ ใช่</td><td>⚠️ จำกัด</td><td>⚠️ งบสูง</td></tr>
+              <tr><td>เปลี่ยน Behavior</td><td class="hl">✅ สูง</td><td>❌ ต่ำ</td><td>⚠️ ปานกลาง</td><td>⚠️ ปานกลาง</td></tr>
+              <tr><td>Data / Analytics</td><td class="hl">✅ Realtime</td><td>❌ ไม่มี</td><td>❌ ไม่มี</td><td>✅ มี (แพง)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         4. FINANCIAL MODEL
+    ══════════════════════════════════ -->
+    <section class="pitch-section reveal">
+      <h2 class="section-title">💰 Financial Model (3-Year Projection)</h2>
+
+      <div class="fin-assumptions reveal">
+        <div class="fa-title">Assumptions</div>
+        <div class="fa-grid">
+          <div class="fa-item"><span>ถัง Pilot</span><strong>5 ถัง (Year 1)</strong></div>
+          <div class="fa-item"><span>ขยาย Year 2</span><strong>15 ถัง</strong></div>
+          <div class="fa-item"><span>ขยาย Year 3</span><strong>30 ถัง</strong></div>
+          <div class="fa-item"><span>ขยะ/ถัง/วัน</span><strong>~15 kg</strong></div>
+          <div class="fa-item"><span>รีไซเคิลได้ 30%</span><strong>4.5 kg/วัน/ถัง</strong></div>
+          <div class="fa-item"><span>ราคาขาย recycle</span><strong>~4 ฿/kg (เฉลี่ย)</strong></div>
+          <div class="fa-item"><span>ขยะอินทรีย์ 49%</span><strong>7.35 kg → ปุ๋ย</strong></div>
+          <div class="fa-item"><span>ราคาปุ๋ยหมัก</span><strong>30 ฿/kg</strong></div>
+          <div class="fa-item"><span>Compost rate</span><strong>~15% ของ organic</strong></div>
+        </div>
+      </div>
+
+      <div class="fin-table-wrap reveal">
+        <table class="data-table fin-table">
+          <thead>
+            <tr>
+              <th>รายการ</th>
+              <th>Year 1 (5 ถัง)</th>
+              <th>Year 2 (15 ถัง)</th>
+              <th>Year 3 (30 ถัง)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="fin-section-row"><td colspan="4">📥 รายจ่าย (Costs)</td></tr>
+            <tr>
+              <td>Hardware (ถัง + components)</td>
+              <td>33,350฿</td>
+              <td>66,700฿ (10 ถังใหม่)</td>
+              <td>66,700฿ (15 ถังใหม่)</td>
+            </tr>
+            <tr>
+              <td>Software / Hosting / Domain</td>
+              <td>3,000฿</td>
+              <td>3,600฿</td>
+              <td>4,200฿</td>
+            </tr>
+            <tr>
+              <td>Campaign & Marketing</td>
+              <td>35,000฿</td>
+              <td>20,000฿</td>
+              <td>15,000฿</td>
+            </tr>
+            <tr>
+              <td>Operations & Maintenance</td>
+              <td>5,000฿</td>
+              <td>12,000฿</td>
+              <td>20,000฿</td>
+            </tr>
+            <tr class="fin-total-row">
+              <td><strong>รวมรายจ่าย</strong></td>
+              <td><strong>76,350฿</strong></td>
+              <td><strong>102,300฿</strong></td>
+              <td><strong>105,900฿</strong></td>
+            </tr>
+
+            <tr class="fin-section-row"><td colspan="4">📤 รายรับ (Revenue)</td></tr>
+            <tr>
+              <td>ขายขยะรีไซเคิล</td>
+              <td>32,400฿</td>
+              <td>97,200฿</td>
+              <td>194,400฿</td>
+            </tr>
+            <tr>
+              <td>ขายปุ๋ยหมัก</td>
+              <td>12,045฿</td>
+              <td>36,135฿</td>
+              <td>72,270฿</td>
+            </tr>
+            <tr>
+              <td>Corporate CSR Sponsorship</td>
+              <td>20,000฿</td>
+              <td>60,000฿</td>
+              <td>120,000฿</td>
+            </tr>
+            <tr>
+              <td>BMA / TAT Grant</td>
+              <td>30,000฿</td>
+              <td>30,000฿</td>
+              <td>30,000฿</td>
+            </tr>
+            <tr class="fin-total-row">
+              <td><strong>รวมรายรับ</strong></td>
+              <td><strong>94,445฿</strong></td>
+              <td><strong>223,335฿</strong></td>
+              <td><strong>416,670฿</strong></td>
+            </tr>
+
+            <tr class="fin-profit-row">
+              <td><strong>🟢 Net Profit / Loss</strong></td>
+              <td class="profit-cell">+18,095฿</td>
+              <td class="profit-cell">+121,035฿</td>
+              <td class="profit-cell">+310,770฿</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="fin-insight reveal">
+        <div class="fi-box">
+          <div class="fib-icon">✅</div>
+          <div>
+            <div class="fib-title">Break-even ปีที่ 1</div>
+            <div class="fib-sub">Revenue ครอบ Cost ได้ตั้งแต่ปีแรก ด้วย Grant + Sponsorship</div>
+          </div>
+        </div>
+        <div class="fi-box">
+          <div class="fib-icon">🚀</div>
+          <div>
+            <div class="fib-title">Self-sustaining ปีที่ 2</div>
+            <div class="fib-sub">ไม่ต้องพึ่ง Grant — Revenue จากขายรีไซเคิล + ปุ๋ยหมัก เพียงพอ</div>
+          </div>
+        </div>
+        <div class="fi-box">
+          <div class="fib-icon">📈</div>
+          <div>
+            <div class="fib-title">3-Year Cumulative Profit</div>
+            <div class="fib-sub">รวม 3 ปี net +449,900฿ — พร้อม scale ต่อไปยังย่านอื่น</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         5. ROADMAP
+    ══════════════════════════════════ -->
+    <section class="pitch-section reveal">
+      <h2 class="section-title">🗓️ Timeline & Roadmap</h2>
+
+      <div class="roadmap">
+        <div class="rm-track">
+
+          <div class="rm-item reveal">
+            <div class="rm-dot"></div>
+            <div class="rm-date">Month 1–2</div>
+            <div class="rm-card">
+              <div class="rm-phase">🔬 R&D Phase</div>
+              <div class="rm-tasks">
+                <div class="rm-task">✅ ออกแบบ circuit + diverter mechanism</div>
+                <div class="rm-task">✅ Prototype ESP32 + Servo บน breadboard</div>
+                <div class="rm-task">✅ เขียน firmware เบื้องต้น</div>
+                <div class="rm-task">✅ ออกแบบ UI QR Result Page</div>
+              </div>
+              <div class="rm-who">👨‍💻 TU Engineering + CS Students</div>
+            </div>
+          </div>
+
+          <div class="rm-item reveal">
+            <div class="rm-dot" style="background:var(--blue)"></div>
+            <div class="rm-date">Month 3</div>
+            <div class="rm-card">
+              <div class="rm-phase">🛠️ Build Phase</div>
+              <div class="rm-tasks">
+                <div class="rm-task">✅ ประกอบ 3 Smart Bin จริง</div>
+                <div class="rm-task">✅ Launch website + Firebase</div>
+                <div class="rm-task">✅ ทดสอบในห้องปฏิบัติการ</div>
+                <div class="rm-task">✅ ขอ MOU กับ BMA สำหรับพื้นที่ Pilot</div>
+              </div>
+              <div class="rm-who">🤝 TU Team + BMA</div>
+            </div>
+          </div>
+
+          <div class="rm-item reveal">
+            <div class="rm-dot" style="background:var(--amber)"></div>
+            <div class="rm-date">Month 4–6</div>
+            <div class="rm-card">
+              <div class="rm-phase">🚀 Pilot Launch</div>
+              <div class="rm-tasks">
+                <div class="rm-task">✅ ติดตั้ง 3 ถังในพื้นที่จริง</div>
+                <div class="rm-task">✅ Launch Influencer Campaign</div>
+                <div class="rm-task">✅ เก็บ data + ปรับปรุง</div>
+                <div class="rm-task">✅ ติดต่อ Upcycling Partner</div>
+              </div>
+              <div class="rm-who">📣 Marketing Team + Influencers</div>
+            </div>
+          </div>
+
+          <div class="rm-item reveal">
+            <div class="rm-dot" style="background:var(--red)"></div>
+            <div class="rm-date">Month 7–9</div>
+            <div class="rm-card">
+              <div class="rm-phase">📊 Optimize & Expand · Mechanism Phase 2</div>
+              <div class="rm-tasks">
+                <div class="rm-task">✅ วิเคราะห์ data Pilot 6 เดือน</div>
+                <div class="rm-task">✅ ขยาย 3 → 10 ถัง</div>
+                <div class="rm-task">✅ เริ่ม Circular Economy loop — ส่ง partner จริง</div>
+                <div class="rm-task">✅ Upgrade กลไก: เพิ่ม Vibration Sensor แยกแก้ว (+70฿/ถัง)</div>
+                <div class="rm-task">✅ 4 ช่อง: โลหะ / แก้ว / เปียก / แห้ง</div>
+              </div>
+              <div class="rm-who">🔄 Full Team + Community · Revenue จ่าย upgrade ได้เลย</div>
+            </div>
+          </div>
+
+          <div class="rm-item reveal">
+            <div class="rm-dot" style="background:var(--green)"></div>
+            <div class="rm-date">Month 10–12</div>
+            <div class="rm-card">
+              <div class="rm-phase">🌏 Scale & Report</div>
+              <div class="rm-tasks">
+                <div class="rm-task">✅ ครบ 15 ถังทั่วย่านพระนคร</div>
+                <div class="rm-task">✅ รายงานผลกระทบ 1 ปีแรก</div>
+                <div class="rm-task">✅ วางแผน Scale ไปย่านอื่น (เยาวราช, บางลำพู)</div>
+                <div class="rm-task">✅ หา Investor สำหรับ Year 2</div>
+              </div>
+              <div class="rm-who">🏆 Self-sustaining Goal</div>
+            </div>
+          </div>
+
+          <div class="rm-item reveal">
+            <div class="rm-dot" style="background:var(--blue)"></div>
+            <div class="rm-date">ปีที่ 2+</div>
+            <div class="rm-card">
+              <div class="rm-phase">🤖 Mechanism Phase 3 — AI Vision</div>
+              <div class="rm-tasks">
+                <div class="rm-task">✅ Upgrade ESP32 → ESP32-CAM</div>
+                <div class="rm-task">✅ ต่อ Google Cloud Vision API</div>
+                <div class="rm-task">✅ 5 ช่อง: โลหะ / แก้ว / อินทรีย์ / รีไซเคิล / ทั่วไป</div>
+                <div class="rm-task">✅ AI accuracy 82–99% ต่อประเภท</div>
+                <div class="rm-task">✅ ถังภายนอกเหมือนเดิม — แค่ swap ชิ้นส่วนภายใน</div>
+              </div>
+              <div class="rm-who">🧠 Phase 3 Cost: +800–1,200฿/ถัง จาก revenue Phase 1–2</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         6. MECHANISM DIAGRAM
+    ══════════════════════════════════ -->
+    <section class="pitch-section reveal">
+      <h2 class="section-title">⚙️ กลไกภายในถัง — Smart Sorting Mechanism</h2>
+
+      <!-- Cross-section diagram -->
+      <div class="mech-wrap reveal">
+        <div class="mech-title">🔍 ภาพตัดขวาง — มองจากด้านข้างผ่ากลางถัง</div>
+        <div class="mech-svg-box">
+          <svg viewBox="0 0 700 720" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;margin:0 auto">
+            <!-- Outer shell -->
+            <rect x="130" y="55" width="16" height="590" rx="3" fill="#1a3020"/>
+            <rect x="554" y="55" width="16" height="590" rx="3" fill="#1a3020"/>
+            <rect x="130" y="628" width="440" height="16" rx="3" fill="#1a3020"/>
+            <rect x="118" y="38" width="464" height="20" rx="8" fill="#1e3a22"/>
+            <text x="350" y="52" text-anchor="middle" font-family="Kanit,sans-serif" font-size="11" fill="#4caf50" font-weight="700">ฝาถัง</text>
+
+            <!-- Slot -->
+            <rect x="278" y="26" width="144" height="16" rx="8" fill="#0a1a0c" stroke="#00ff88" stroke-width="2"/>
+            <text x="350" y="38" text-anchor="middle" font-family="Kanit,sans-serif" font-size="10" fill="#00ff88">ช่องทิ้งขยะ</text>
+            <text x="350" y="16" text-anchor="middle" font-family="Kanit,sans-serif" font-size="16">⬇</text>
+
+            <!-- ZONE A: IR -->
+            <rect x="146" y="58" width="408" height="62" fill="#0a0f0b" stroke="#7b2fff" stroke-width="1" stroke-dasharray="5,3"/>
+            <rect x="146" y="58" width="136" height="16" fill="#7b2fff"/>
+            <text x="214" y="69" text-anchor="middle" font-family="Kanit,sans-serif" font-size="9" fill="#fff" font-weight="700">A: IR DETECT</text>
+            <rect x="152" y="76" width="58" height="32" rx="5" fill="#1a0a2e" stroke="#7b2fff" stroke-width="1.5"/>
+            <text x="181" y="91" text-anchor="middle" font-family="Kanit,sans-serif" font-size="9" fill="#a855f7">IR</text>
+            <text x="181" y="103" text-anchor="middle" font-family="Kanit,sans-serif" font-size="8" fill="#7b2fff">Sensor</text>
+            <line x1="210" y1="92" x2="490" y2="92" stroke="#7b2fff" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.7"/>
+            <rect x="490" y="76" width="58" height="32" rx="5" fill="#1a0a2e" stroke="#7b2fff" stroke-width="1.5"/>
+            <text x="519" y="91" text-anchor="middle" font-family="Kanit,sans-serif" font-size="9" fill="#a855f7">IR</text>
+            <text x="519" y="103" text-anchor="middle" font-family="Kanit,sans-serif" font-size="8" fill="#7b2fff">Receiver</text>
+            <text x="350" y="116" text-anchor="middle" font-family="Kanit,sans-serif" font-size="9" fill="#a855f7">ตัดลำแสง → trigger ระบบทั้งหมด</text>
+
+            <!-- ZONE B: REJECT FLAP -->
+            <rect x="146" y="120" width="408" height="88" fill="#100800" stroke="#ff4d6d" stroke-width="1.5" stroke-dasharray="5,3"/>
+            <rect x="146" y="120" width="160" height="16" fill="#ff4d6d"/>
+            <text x="226" y="131" text-anchor="middle" font-family="Kanit,sans-serif" font-size="9" fill="#fff" font-weight="700">B: REJECT FLAP</text>
+            <line x1="196" y1="166" x2="504" y2="166" stroke="#ff6b35" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="350" cy="166" r="5" fill="#ff4d6d"/>
+            <rect x="305" y="138" width="90" height="18" rx="4" fill="#200000" stroke="#ff4d6d" stroke-width="1.5"/>
+            <text x="350" y="150" text-anchor="middle" font-family="Kanit,sans-serif" font-size="8" fill="#ff6b35">Servo (Reject Flap)</text>
+            <!-- Reject openings -->
+            <rect x="146" y="138" width="50" height="50" fill="#1a0505" stroke="#ff4d6d" stroke-width="1"/>
+            <text x="171" y="158" text-anchor="middle" font-family="Kanit,sans-serif" font-size="8" fill="#ff4d6d">ช่อง</text>
+            <text x="171" y="170" text-anchor="middle" font-family="Kanit,sans-serif" font-size="8" fill="#ff4d6d">คืน</text>
+            <line x1="146" y1="163" x2="118" y2="163" stroke="#ff4d6d" stroke-width="2" opacity="0.7"/>
+            <rect x="504" y="138" width="50" height="50" fill="#1a0505" stroke="#ff4d6d" stroke-width="1"/>
+            <text x="529" y="158" text-anchor="middle" font-family="Kanit,sans-serif" font-size="8" fill="#ff4d6d">ช่อง</text>
+            <text x="529" y="170" text-anchor="middle" font-family="Kanit,sans-serif" font-size="8" fill="#ff4d6d">คืน</text>
+            <line x1="554" y1="163" x2="582" y2="163" stroke="#ff4d6d" stroke-width="2" opacity="0.7"/>
+            <text x="350" y="198" text-anchor="middle" font-family="Kanit,sans-serif" font-size="9" fill="#ff4d6d">น้ำหนัก &gt; 400g → Flap เอียง → คืนถุงออกด้านข้าง</text>
+
+            <!-- ZONE C: LANDING ZONE -->
+            <rect x="146" y="208" width="408" height="110" fill="#0a0d00" stroke="#ffb830" stroke-width="1.5" stroke-dasharray="5,3"/>
+            <rect x="146" y="208" width="180" height="16" fill="#ffb830"/>
+            <text x="236" y="219" text-anchor="middle" font-family="Kanit,sans-serif" font-size="9" fill="#000" font-weight="700">C: LANDING ZONE ⭐</text>
+            <!-- Inductive sensor -->
+            <rect x="152" y="232" width="68" height="38" rx="5" fill="#1a1500" stroke="#aab8c2" stroke-width="1.5"/>
+            <text x="186" y="248" text-anchor="middle" font-family="Kanit,sans-serif" font-size="9" fill="#aab8c2">Inductive</text>
+            <text x="186" y="262" text-anchor="middle" font-family="Kanit,sans-serif" font-size="9" fill="#aab8c2">Sensor</text>
+            <line x1="220" y1="251" x2="480" y2="251" stroke="#aab8c2" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
+            <!-- Landing platform -->
+            <text x="350" y="268" text-anchor="middle" font-family="Kanit,sans-serif" font-size="20">📦</text>
+            <text x="350" y="285" text-anchor="middle" font-family="Kanit,sans-serif" font-size="8" fill="#ffb830">ขยะพักตรงนี้ ~0.3 วินาที</text>
+            <rect x="220" y="290" width="260" height="13" rx="3" fill="#2a2200" stroke="#ffb830" stroke-width="2"/>
+            <text x="350" y="301" text-anchor="middle" font-family="Kanit,sans-serif" font-size="8" fill="#ffb830" font-weight="700">Landing Platform</text>
+            <rect x="270" y="303" width="160" height="10" rx="3" fill="#1a1500" stroke="#ffb830" stroke-width="1.5"/>
+            <text x="350" y="312" text-anchor="middle" font-family="Kanit,sans-serif" font-size="7" fill="#ffb830">Load Cell (HX711)</text>
+
+            <!-- ZONE D: GATE 1 -->
+            <rect x="146" y="318" width="408" height="72" fill="#0a0a00" stroke="#aab8c2" stroke-width="1" stroke-dasharray="5,3"/>
+            <rect x="146" y="318" width="148" height="16" fill="#aab8c2"/>
+            <text x="220" y="329" text-anchor="middle" font-family="Kanit,sans-serif" font-size="9" fill="#000" font-weight="700">D: GATE 1 — โลหะ</text>
+            <line x1="216" y1="362" x2="484" y2="362" stroke="#aab8c2" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="350" cy="362" r="5" fill="#aab8c2"/>
+            <rect x="295" y="336" width="110" height="18" rx="4" fill="#1a1a00" stroke="#aab8c2" stroke-width="1.5"/>
+            <text x="350" y="348" text-anchor="middle" font-family="Kanit,sans-serif" font-size="8" fill="#aab8c2">Servo SG90 #1 — แนวนอน</text>
+            <!-- Metal exit left -->
+            <line x1="216" y1="376" x2="146" y2="376" stroke="#aab8c2" stroke-width="2" opacity="0.7"/>
+            <text x="138" y="374" text-anchor="end" font-family="Kanit,sans-serif" font-size="9" fill="#aab8c2">🥫 โลหะ</text>
+            <text x="350" y="382" text-anchor="middle" font-family="Kanit,sans-serif" font-size="8" fill="#aab8c2">หมุนซ้าย = โลหะออกซ้าย | ไม่หมุน = ผ่านลง Gate 2</text>
+
+            <!-- ZONE E: GATE 2 -->
+            <rect x="146" y="390" width="408" height="72" fill="#050d06" stroke="#00ff88" stroke-width="1.5" stroke-dasharray="5,3"/>
+            <rect x="146" y="390" width="172" height="16" fill="#00ff88"/>
+            <text x="233" y="401" text-anchor="middle" font-family="Kanit,sans-serif" font-size="9" fill="#000" font-weight="700">E: GATE 2 — เปียก/แห้ง</text>
+            <line x1="226" y1="434" x2="474" y2="434" stroke="#00ff88" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="350" cy="434" r="5" fill="#00ff88"/>
+            <rect x="295" y="408" width="110" height="18" rx="4" fill="#0a1a0c" stroke="#00ff88" stroke-width="1.5"/>
+            <text x="350" y="420" text-anchor="middle" font-family="Kanit,sans-serif" font-size="8" fill="#00ff88">Servo SG90 #2 — แนวตั้ง (เยื้องขวา)</text>
+            <!-- wet exit left -->
+            <line x1="226" y1="448" x2="146" y2="448" stroke="#4caf50" stroke-width="2" opacity="0.8"/>
+            <text x="138" y="446" text-anchor="end" font-family="Kanit,sans-serif" font-size="9" fill="#4caf50">🍃 เปียก</text>
+            <!-- dry exit right -->
+            <line x1="474" y1="448" x2="554" y2="448" stroke="#ffce00" stroke-width="2" opacity="0.8"/>
+            <text x="562" y="446" font-family="Kanit,sans-serif" font-size="9" fill="#ffce00">♻️ แห้ง</text>
+            <text x="350" y="456" text-anchor="middle" font-family="Kanit,sans-serif" font-size="8" fill="#00ff88">หมุนซ้าย = เปียก | หมุนขวา = แห้ง</text>
+
+            <!-- 3 chambers -->
+            <rect x="146" y="462" width="128" height="162" rx="8" fill="#0d0d00" stroke="#aab8c2" stroke-width="2"/>
+            <text x="210" y="530" text-anchor="middle" font-family="Kanit,sans-serif" font-size="24">🥫</text>
+            <text x="210" y="556" text-anchor="middle" font-family="Kanit,sans-serif" font-size="11" fill="#aab8c2" font-weight="700">โลหะ</text>
+            <text x="210" y="572" text-anchor="middle" font-family="Kanit,sans-serif" font-size="9" fill="#4a6550">ลิ้นชักดึงซ้าย</text>
+            <text x="210" y="586" text-anchor="middle" font-family="Kanit,sans-serif" font-size="8" fill="#4a6550">~30฿/kg</text>
+
+            <rect x="226" y="462" width="136" height="162" rx="8" fill="#0a1a0a" stroke="#4caf50" stroke-width="2"/>
+            <text x="294" y="530" text-anchor="middle" font-family="Kanit,sans-serif" font-size="24">🍃</text>
+            <text x="294" y="556" text-anchor="middle" font-family="Kanit,sans-serif" font-size="11" fill="#4caf50" font-weight="700">อินทรีย์</text>
+            <text x="294" y="572" text-anchor="middle" font-family="Kanit,sans-serif" font-size="9" fill="#4a6550">ลิ้นชักดึงขวา</text>
+            <text x="294" y="586" text-anchor="middle" font-family="Kanit,sans-serif" font-size="8" fill="#4a6550">→ BMA Compost</text>
+
+            <rect x="364" y="462" width="190" height="162" rx="8" fill="#0a100a" stroke="#ffce00" stroke-width="2"/>
+            <text x="459" y="520" text-anchor="middle" font-family="Kanit,sans-serif" font-size="20">♻️ 🔵</text>
+            <text x="459" y="548" text-anchor="middle" font-family="Kanit,sans-serif" font-size="11" fill="#ffce00" font-weight="700">แห้ง</text>
+            <text x="459" y="564" text-anchor="middle" font-family="Kanit,sans-serif" font-size="9" fill="#4a6550">ลิ้นชักดึงหน้า</text>
+            <text x="459" y="580" text-anchor="middle" font-family="Kanit,sans-serif" font-size="8" fill="#4a6550">รีไซเคิล + ทั่วไป</text>
+            <text x="459" y="596" text-anchor="middle" font-family="Kanit,sans-serif" font-size="8" fill="#4a6550">→ WasteBuy / Wongpanit</text>
+
+            <!-- ESP32 box -->
+            <rect x="595" y="208" width="96" height="108" rx="10" fill="#001a10" stroke="#00ff88" stroke-width="1.5"/>
+            <text x="643" y="228" text-anchor="middle" font-family="Kanit,sans-serif" font-size="10" fill="#00ff88" font-weight="700">ESP32</text>
+            <text x="643" y="244" text-anchor="middle" font-family="Kanit,sans-serif" font-size="8" fill="#4a6550">รับ: IR</text>
+            <text x="643" y="258" text-anchor="middle" font-family="Kanit,sans-serif" font-size="8" fill="#4a6550">รับ: Weight</text>
+            <text x="643" y="272" text-anchor="middle" font-family="Kanit,sans-serif" font-size="8" fill="#4a6550">รับ: Inductive</text>
+            <text x="643" y="286" text-anchor="middle" font-family="Kanit,sans-serif" font-size="8" fill="#4a6550">สั่ง: Servo ×3</text>
+            <text x="643" y="300" text-anchor="middle" font-family="Kanit,sans-serif" font-size="8" fill="#00ff88">WiFi → Cloud</text>
+            <line x1="595" y1="238" x2="570" y2="238" stroke="#7b2fff" stroke-width="1" stroke-dasharray="3,2" opacity="0.6"/>
+            <line x1="595" y1="258" x2="570" y2="258" stroke="#ffb830" stroke-width="1" stroke-dasharray="3,2" opacity="0.6"/>
+            <line x1="595" y1="278" x2="570" y2="278" stroke="#aab8c2" stroke-width="1" stroke-dasharray="3,2" opacity="0.6"/>
+
+            <!-- Flow label -->
+            <text x="350" y="710" text-anchor="middle" font-family="Kanit,sans-serif" font-size="10" fill="#4a6550">IR → Reject/Landing → Gate 1 (โลหะ) → Gate 2 (เปียก/แห้ง) → 3 ช่อง</text>
+          </svg>
+        </div>
+
+        <!-- Reject flap comparison -->
+        <div class="mech-reject reveal">
+          <div class="mech-subtitle">⚠️ Reject Flap — ปกติ vs ตรวจพบถุงขยะ</div>
+          <div class="mech-reject-grid">
+            <div class="mr-card ok">
+              <div class="mr-state">✅ ปกติ — ขยะชิ้นเดียว</div>
+              <svg viewBox="0 0 280 140" style="width:100%">
+                <rect x="30" y="10" width="12" height="120" fill="#1a3020"/>
+                <rect x="238" y="10" width="12" height="120" fill="#1a3020"/>
+                <text x="140" y="35" text-anchor="middle" font-size="18">🥤</text>
+                <line x1="42" y1="72" x2="238" y2="72" stroke="#666" stroke-width="5" stroke-linecap="round"/>
+                <circle cx="140" cy="72" r="4" fill="#888"/>
+                <text x="140" y="65" text-anchor="middle" font-family="Kanit,sans-serif" font-size="9" fill="#888">Flap ปิด (ผ่านได้)</text>
+                <text x="140" y="90" text-anchor="middle" font-size="14">🥤</text>
+                <text x="140" y="115" text-anchor="middle" font-family="Kanit,sans-serif" font-size="9" fill="#00ff88">ผ่านลง Landing Zone ✅</text>
+                <rect x="50" y="118" width="180" height="20" rx="5" fill="#050d06" stroke="#00ff88" stroke-width="1"/>
+                <text x="140" y="132" text-anchor="middle" font-family="Kanit,sans-serif" font-size="9" fill="#00ff88">น้ำหนัก: 150g ✅</text>
+              </svg>
+            </div>
+            <div class="mr-card warn">
+              <div class="mr-state">⚠️ ถุงขยะ — น้ำหนักผิดปกติ</div>
+              <svg viewBox="0 0 280 140" style="width:100%">
+                <rect x="30" y="10" width="12" height="120" fill="#1a3020"/>
+                <rect x="238" y="10" width="12" height="120" fill="#1a3020"/>
+                <text x="140" y="35" text-anchor="middle" font-size="18">🛍️</text>
+                <line x1="42" y1="65" x2="238" y2="82" stroke="#ff4d6d" stroke-width="5" stroke-linecap="round"/>
+                <circle cx="140" cy="73" r="4" fill="#ff4d6d"/>
+                <text x="140" y="60" text-anchor="middle" font-family="Kanit,sans-serif" font-size="9" fill="#ff4d6d">Flap เอียง → คืนขยะ!</text>
+                <line x1="42" y1="73" x2="14" y2="73" stroke="#ff4d6d" stroke-width="2" opacity="0.8"/>
+                <text x="12" y="71" text-anchor="end" font-family="Kanit,sans-serif" font-size="9" fill="#ff4d6d">ออก!</text>
+                <circle cx="220" cy="100" r="12" fill="#ff1a00" opacity="0.8"/>
+                <text x="220" y="104" text-anchor="middle" font-family="Kanit,sans-serif" font-size="8" fill="#fff">LED</text>
+                <rect x="50" y="118" width="180" height="20" rx="5" fill="#1a0505" stroke="#ff4d6d" stroke-width="1"/>
+                <text x="140" y="132" text-anchor="middle" font-family="Kanit,sans-serif" font-size="9" fill="#ff4d6d">น้ำหนัก: 620g ⚠️ → QR แจ้ง</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flow summary -->
+        <div class="mech-flow-box reveal">
+          <div class="mech-subtitle">📋 ลำดับการทำงานทั้งหมด</div>
+          <div class="mech-flow-steps">
+            <div class="mfs"><span class="mfs-num" style="background:#7b2fff">1</span><span class="mfs-text"><strong style="color:#a855f7">IR Sensor</strong> ตรวจจับขยะตัดผ่านลำแสง → trigger ระบบ</span></div>
+            <div class="mfs"><span class="mfs-num" style="background:#ff4d6d">2</span><span class="mfs-text"><strong style="color:#ff4d6d">Reject Flap</strong> รอรับ — Load Cell ชั่งน้ำหนักทันที</span></div>
+            <div class="mfs"><span class="mfs-num" style="background:#ffb830">3</span><span class="mfs-text"><strong style="color:#ffb830">Landing Zone</strong> ขยะพัก ~0.3 วินาที — Inductive + Weight ส่งข้อมูล ESP32</span></div>
+            <div class="mfs"><span class="mfs-num" style="background:#ff4d6d">4a</span><span class="mfs-text"><strong style="color:#ff4d6d">ถุง (น้ำหนัก &gt; 400g)</strong> → Flap เอียง → คืนออกด้านข้าง → LED แดง → QR แจ้ง</span></div>
+            <div class="mfs"><span class="mfs-num" style="background:#aab8c2">4b</span><span class="mfs-text"><strong style="color:#aab8c2">โลหะ</strong> → Gate 1 เอียงซ้าย → ช่องโลหะ</span></div>
+            <div class="mfs"><span class="mfs-num" style="background:#4caf50">4c</span><span class="mfs-text"><strong style="color:#4caf50">เปียก/อินทรีย์</strong> → Gate 2 เอียงซ้าย → ช่องอินทรีย์</span></div>
+            <div class="mfs"><span class="mfs-num" style="background:#ffce00">4d</span><span class="mfs-text"><strong style="color:#ffce00">แห้ง</strong> → Gate 2 เอียงขวา → ช่องแห้ง (รีไซเคิล+ทั่วไป)</span></div>
+            <div class="mfs"><span class="mfs-num" style="background:#00ff88">5</span><span class="mfs-text"><strong style="color:#00ff88">QR Code</strong> ขึ้นบนหน้าจอ + Firebase บันทึก + EcoPoints</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         7. CIRCULAR ECONOMY LOOP
+    ══════════════════════════════════ -->
+    <section class="pitch-section reveal">
+      <h2 class="section-title">♻️ Circular Economy Loop</h2>
+
+      <!-- Visual Flow Diagram -->
+      <div class="ce-flow reveal">
+        <div class="ce-node start">
+          <div class="ce-icon">🗑️</div>
+          <div class="ce-label">นักท่องเที่ยวทิ้งขยะ</div>
+          <div class="ce-sub">ไม่ต้องแยกเอง</div>
+        </div>
+        <div class="ce-arrow">→</div>
+        <div class="ce-node">
+          <div class="ce-icon">🤖</div>
+          <div class="ce-label">Smart Bin แยกอัตโนมัติ</div>
+          <div class="ce-sub">IR Sensor + Servo Motor</div>
+        </div>
+        <div class="ce-arrow">→</div>
+        <div class="ce-split">
+          <div class="ce-branch organic">
+            <div class="cb-icon">🍃</div>
+            <div class="cb-title">อินทรีย์ 49%</div>
+            <div class="cb-dest">→ BMA Compost</div>
+            <div class="cb-out">ปุ๋ยหมัก → สวนพระนคร</div>
+          </div>
+          <div class="ce-branch recycle">
+            <div class="cb-icon">🔵</div>
+            <div class="cb-title">พลาสติก Premium</div>
+            <div class="cb-dest">→ SCGC Partnership</div>
+            <div class="cb-out">PCR Resin → เก้าอี้/ผลิตภัณฑ์</div>
+          </div>
+          <div class="ce-branch general">
+            <div class="cb-icon">♻️</div>
+            <div class="cb-title">รีไซเคิลทั่วไป 30%</div>
+            <div class="cb-dest">→ WasteBuy / Wongpanit</div>
+            <div class="cb-out">ขาย → รายได้ดูแลถัง</div>
+          </div>
+        </div>
+        <div class="ce-arrow ce-arrow-down">↓</div>
+        <div class="ce-node revenue">
+          <div class="ce-icon">💰</div>
+          <div class="ce-label">รายได้หมุนเวียน</div>
+          <div class="ce-sub">Self-sustaining loop</div>
+        </div>
+        <div class="ce-arrow">→</div>
+        <div class="ce-node start">
+          <div class="ce-icon">🔧</div>
+          <div class="ce-label">ดูแล Smart Bin</div>
+          <div class="ce-sub">ไม่ต้องพึ่งงบภายนอก</div>
+        </div>
+      </div>
+
+      <!-- Partners Detail -->
+      <div class="ce-partners reveal">
+        <div class="cep-title">🤝 Partners ที่มี Precedent จริงในไทย</div>
+        <div class="cep-grid">
+
+          <div class="cep-card scgc">
+            <div class="cep-header">
+              <div class="cep-logo">🏭</div>
+              <div>
+                <div class="cep-name">SCGC (SCG Chemicals)</div>
+                <div class="cep-type">พลาสติก Post-consumer → PCR Resin</div>
+              </div>
+              <span class="cep-badge" style="background:rgba(0,255,136,0.15);color:var(--green)">มี Precedent ✅</span>
+            </div>
+            <div class="cep-body">
+              SCGC กำลัง co กับ BMA โดยตรงใน pilot ที่ <strong>สนามหลวง</strong> (ติดกับพระนครพอดี) รับพลาสติก post-consumer ไปแปรรูปเป็น PCR PP Resin แล้วผลิตเป็นเก้าอี้ที่ใช้งานได้จริง — argue ได้ทันทีว่าเราแค่ <strong>ขยาย pilot ที่มีอยู่แล้วมาพระนคร</strong> ไม่ต้องเริ่มจากศูนย์
+            </div>
+            <div class="cep-receives">รับ: ขวด PE/PP · ถุง LDPE · บรรจุภัณฑ์พลาสติก</div>
+          </div>
+
+          <div class="cep-card wastebuy">
+            <div class="cep-header">
+              <div class="cep-logo">📱</div>
+              <div>
+                <div class="cep-name">WasteBuy Delivery</div>
+                <div class="cep-type">รีไซเคิลทั่วไป → ขาย → รายได้</div>
+              </div>
+              <span class="cep-badge" style="background:rgba(48,213,255,0.15);color:var(--blue)">BMA แนะนำ ✅</span>
+            </div>
+            <div class="cep-body">
+              BMA แนะนำ WasteBuy Delivery อย่างเป็นทางการ มี app schedule pickup ได้ <strong>และจ่ายเงินให้</strong> — พอถังเต็ม กด app รอรับเงิน ง่ายที่สุด ไม่ต้องทำ MOU ซับซ้อน เริ่มได้ทันที
+            </div>
+            <div class="cep-receives">รับ: กระดาษ · พลาสติก · แก้ว · โลหะ · อะลูมิเนียม</div>
+          </div>
+
+          <div class="cep-card indorama">
+            <div class="cep-header">
+              <div class="cep-logo">🏗️</div>
+              <div>
+                <div class="cep-name">Indorama Ventures</div>
+                <div class="cep-type">ขวด PET → เส้นใย Polyester</div>
+              </div>
+              <span class="cep-badge" style="background:rgba(255,184,48,0.15);color:var(--amber)">co กับ BMA อยู่แล้ว</span>
+            </div>
+            <div class="cep-body">
+              Indorama co กับ BMA ผ่าน WasteBuy Delivery รับขวด PET ไปแปรรูปที่โรงงานนครปฐม ผลิตเป็น <strong>ขวด PET รีไซเคิลและเส้นใย polyester</strong> — เหมาะสำหรับขวดพลาสติกที่คาดว่าจะเยอะมากในย่านท่องเที่ยว
+            </div>
+            <div class="cep-receives">รับ: ขวด PET เท่านั้น (แยกชัด)</div>
+          </div>
+
+          <div class="cep-card bma">
+            <div class="cep-header">
+              <div class="cep-logo">🌱</div>
+              <div>
+                <div class="cep-name">BMA Compost Plant</div>
+                <div class="cep-type">ขยะอินทรีย์ → ปุ๋ยหมัก → สวนพระนคร</div>
+              </div>
+              <span class="cep-badge" style="background:rgba(0,255,136,0.15);color:var(--green)">รัฐทำเองอยู่แล้ว ✅</span>
+            </div>
+            <div class="cep-body">
+              BMA มีโรงงานปุ๋ยอินทรีย์ของตัวเองรับขยะอาหารไปทำปุ๋ย แจกจ่ายต่อ — เราแค่เป็น <strong>collection point</strong> ส่งต่อให้เขา ไม่ต้องสร้างโรงปุ๋ยเอง ลด cost ได้มาก แถมปุ๋ยที่ได้ยังวน loop กลับมาใช้ในสวนสาธารณะย่านพระนครด้วย
+            </div>
+            <div class="cep-receives">รับ: เศษอาหาร · เปลือกผลไม้ · ใบไม้ · ขยะอินทรีย์ทุกชนิด</div>
+          </div>
+
+          <div class="cep-card wongpanit">
+            <div class="cep-header">
+              <div class="cep-logo">🏪</div>
+              <div>
+                <div class="cep-name">Wongpanit (วงษ์พาณิชย์)</div>
+                <div class="cep-type">รีไซเคิลทุกชนิด → ขายได้ทันที</div>
+              </div>
+              <span class="cep-badge" style="background:rgba(255,184,48,0.15);color:var(--amber)">Walk-in ได้เลย</span>
+            </div>
+            <div class="cep-body">
+              รายใหญ่ที่สุดในไทย รับซื้อ paper, plastic, glass, aluminum, steel ราคา ~11,300฿/ตัน มี 1,600 สาขาทั่วไทย — <strong>ไม่ต้องรอ partnership</strong> walk-in ได้ทันที เหมาะสำหรับช่วง Pilot ก่อนที่จะมี MOU กับรายใหญ่
+            </div>
+            <div class="cep-receives">รับ: ทุกประเภทรีไซเคิล · ราคาขึ้นกับน้ำหนักและชนิด</div>
+          </div>
+
+          <div class="cep-card new-policy">
+            <div class="cep-header">
+              <div class="cep-logo">📋</div>
+              <div>
+                <div class="cep-name">นโยบาย BMA ใหม่ 2025</div>
+                <div class="cep-type">"บ้านนี้ไม่เทรวม" — โอกาสขอทุน</div>
+              </div>
+              <span class="cep-badge" style="background:rgba(255,77,109,0.15);color:var(--red)">🔥 ใหม่มาก!</span>
+            </div>
+            <div class="cep-body">
+              BMA ปี 2025 ออกนโยบายให้ส่วนลดค่าเก็บขยะแก่ครัวเรือนที่แยกขยะตาม "บ้านนี้ไม่เทรวม" — แปลว่า BMA <strong>กำลังหาพันธมิตรช่วยทำให้คนแยกขยะได้จริง</strong> Smart Bin ของเราตอบโจทย์นี้ตรงๆ และมีโอกาสขอ <strong>งบสนับสนุนจาก BMA ได้</strong>
+            </div>
+            <div class="cep-receives">โอกาส: ขอ Grant + WiFi สาธารณะ + พื้นที่ติดตั้ง</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Revenue from Loop -->
+      <div class="ce-revenue reveal">
+        <div class="cer-title">💰 รายได้จาก Circular Loop (ต่อเดือน · 5 ถัง Pilot)</div>
+        <div class="cer-grid">
+          <div class="cer-item">
+            <div class="cer-icon">♻️</div>
+            <div class="cer-source">WasteBuy / Wongpanit</div>
+            <div class="cer-desc">ขาย recycle ~4฿/kg × 4.5kg/วัน × 5 ถัง × 30 วัน</div>
+            <div class="cer-amt">+2,700฿</div>
+          </div>
+          <div class="cer-item">
+            <div class="cer-icon">🌱</div>
+            <div class="cer-source">ปุ๋ยหมักจาก BMA Compost</div>
+            <div class="cer-desc">ขายปุ๋ยหมักให้ชุมชน 30฿/kg × ~1kg/วัน × 5 ถัง × 30</div>
+            <div class="cer-amt">+4,500฿</div>
+          </div>
+          <div class="cer-item">
+            <div class="cer-icon">🏭</div>
+            <div class="cer-source">SCGC Brand Value</div>
+            <div class="cer-desc">ไม่ได้เงินโดยตรง แต่ได้ credibility + PR story ให้ pitch</div>
+            <div class="cer-amt" style="color:var(--blue)">Brand ✅</div>
+          </div>
+          <div class="cer-item total">
+            <div class="cer-icon">💵</div>
+            <div class="cer-source">รวมรายได้ต่อเดือน</div>
+            <div class="cer-desc">จาก Circular loop อย่างเดียว ยังไม่รวม Grant/Sponsorship</div>
+            <div class="cer-amt" style="color:var(--green);font-size:1.3rem">+7,200฿</div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

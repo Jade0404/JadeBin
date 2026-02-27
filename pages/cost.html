@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cost & ROI — PrachanBin</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .cost-page { max-width:1100px; margin:0 auto; padding:2.5rem 2rem 4rem; }
+    .compare-hero { display:grid; grid-template-columns:1fr auto 1fr auto 1fr; gap:1rem; align-items:center; margin-bottom:2.5rem; }
+    .cc { background:var(--card); border:1px solid var(--border); border-radius:20px; padding:1.6rem; text-align:center; }
+    .cc.v1 { opacity:0.45; }
+    .cc.v2 { opacity:0.7; border-color:rgba(255,184,48,0.3); }
+    .cc.v3 { border-color:rgba(0,255,136,0.5); background:rgba(0,255,136,0.05); }
+    .cc-label { font-size:0.65rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.4rem; }
+    .cc-num { font-family:'Space Mono',monospace; font-size:2.2rem; font-weight:700; }
+    .cc.v1 .cc-num { color:var(--red); text-decoration:line-through; }
+    .cc.v2 .cc-num { color:var(--amber); text-decoration:line-through; }
+    .cc.v3 .cc-num { color:var(--green); }
+    .cc-sub { font-size:0.72rem; color:var(--muted); margin-top:0.35rem; line-height:1.4; }
+    .arr { text-align:center; font-size:1.6rem; color:var(--muted); }
+    .arr span { display:block; font-family:'Space Mono',monospace; font-size:0.75rem; font-weight:700; color:var(--green); margin-top:0.2rem; }
+    .cost-block { background:var(--card); border-radius:18px; overflow:hidden; border:1px solid var(--border); margin-bottom:1.5rem; }
+    .cost-block-hd { padding:1rem 1.6rem; background:#0d1f10; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border); }
+    .cbh-t { font-size:0.95rem; font-weight:700; }
+    .cbh-s { font-family:'Space Mono',monospace; font-size:0.9rem; color:var(--amber); }
+    table { width:100%; border-collapse:collapse; }
+    th { text-align:left; font-size:0.66rem; color:var(--muted); padding:0.65rem 1.4rem; letter-spacing:0.08em; text-transform:uppercase; background:#0a1a0d; border-bottom:1px solid var(--border); }
+    th:last-child { text-align:right; }
+    td { padding:0.75rem 1.4rem; border-bottom:1px solid #111e13; font-size:0.84rem; vertical-align:top; }
+    tr:last-child td { border-bottom:none; }
+    td:last-child { text-align:right; font-family:'Space Mono',monospace; font-weight:700; }
+    .item-name { font-weight:600; }
+    .item-note { font-size:0.68rem; color:var(--muted); margin-top:0.12rem; }
+    .ic { display:inline-block; font-size:0.6rem; font-weight:700; padding:0.1rem 0.4rem; border-radius:999px; margin-left:0.3rem; vertical-align:middle; }
+    .ic-cut  { background:rgba(255,77,109,0.15);  color:var(--red); }
+    .ic-keep { background:rgba(0,255,136,0.10);   color:var(--green); }
+    .ic-down { background:rgba(255,184,48,0.15);  color:var(--amber); }
+    .ic-free { background:rgba(48,213,255,0.12);  color:var(--blue); }
+    .p-old  { color:var(--muted); text-decoration:line-through; font-size:0.72rem; display:block; }
+    .p-new  { color:var(--amber); }
+    .p-free { color:var(--green); }
+    .subtotal td { background:rgba(0,255,136,0.05); font-weight:700; border-top:1px solid rgba(0,255,136,0.15); }
+    .subtotal td:last-child { color:var(--green); font-size:1rem; }
+    .grand { background:linear-gradient(135deg,rgba(0,255,136,0.08),transparent); border:1px solid rgba(0,255,136,0.28); border-radius:18px; padding:1.6rem 2rem; margin-bottom:2rem; display:flex; justify-content:space-between; align-items:center; }
+    .grand-title { font-size:1.05rem; font-weight:700; }
+    .grand-sub   { font-size:0.78rem; color:var(--muted); margin-top:0.3rem; }
+    .grand-tag   { display:inline-block; margin-top:0.6rem; font-size:0.75rem; font-weight:700; padding:0.25rem 0.7rem; border-radius:999px; background:rgba(0,255,136,0.15); color:var(--green); }
+    .grand-r     { text-align:right; }
+    .grand-old   { font-family:'Space Mono',monospace; color:var(--muted); text-decoration:line-through; font-size:0.9rem; }
+    .grand-new   { font-family:'Space Mono',monospace; font-size:2.6rem; font-weight:700; color:var(--green); line-height:1; }
+    .grand-diff  { font-size:0.78rem; color:var(--red); margin-top:0.3rem; }
+    .source-block { background:var(--card); border-radius:16px; padding:1.4rem; border:1px solid var(--border); margin-bottom:2rem; }
+    .source-title { font-weight:700; color:var(--blue); font-size:0.9rem; margin-bottom:1rem; }
+    .source-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.8rem; }
+    .source-item { background:var(--surface); border-radius:10px; padding:0.9rem; border:1px solid var(--border); }
+    .si-shop { font-size:0.75rem; font-weight:700; color:var(--blue); margin-bottom:0.4rem; }
+    .si-item { font-size:0.78rem; margin-bottom:0.15rem; }
+    .si-price { font-family:'Space Mono',monospace; font-size:0.75rem; color:var(--amber); }
+    .pilot-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-bottom:1.5rem; }
+    .pilot-card { background:var(--card); border-radius:16px; padding:1.4rem; border:1px solid var(--border); }
+    .pilot-card.hl { border-color:rgba(0,255,136,0.3); background:linear-gradient(135deg,rgba(0,255,136,0.05),var(--card)); }
+    .pilot-hd { font-size:0.7rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.07em; margin-bottom:0.9rem; }
+    .pilot-line { display:flex; justify-content:space-between; padding:0.45rem 0; border-bottom:1px solid #1a261d; font-size:0.83rem; }
+    .pilot-line:last-of-type { border-bottom:none; }
+    .pilot-line span:last-child { font-family:'Space Mono',monospace; color:var(--amber); }
+    .pilot-total { margin-top:0.9rem; padding:0.75rem; background:rgba(0,255,136,0.08); border-radius:10px; display:flex; justify-content:space-between; align-items:center; border:1px solid rgba(0,255,136,0.2); }
+    .pilot-total-num { font-family:'Space Mono',monospace; font-size:1.3rem; font-weight:700; color:var(--green); }
+    .roi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-bottom:1.5rem; }
+    .roi-card { background:var(--card); border-radius:14px; padding:1.2rem; border:1px solid var(--border); text-align:center; }
+    .roi-num { font-family:'Space Mono',monospace; font-size:1.4rem; font-weight:700; color:var(--green); }
+    .roi-label { font-size:0.72rem; color:var(--muted); margin-top:0.3rem; line-height:1.4; }
+    .fund-block { background:var(--card); border-radius:14px; padding:1.3rem; border:1px solid var(--border); }
+    .fund-title { font-weight:700; color:var(--green); margin-bottom:0.8rem; font-size:0.9rem; }
+    .fund-grid { display:grid; grid-template-columns:1fr 1fr; gap:0.4rem; }
+    .fund-item { font-size:0.8rem; color:var(--muted); padding:0.25rem 0; }
+    @media(max-width:900px){
+      .compare-hero { grid-template-columns:1fr; }
+      .source-grid { grid-template-columns:1fr 1fr; }
+      .pilot-grid { grid-template-columns:1fr; }
+      .roi-grid { grid-template-columns:1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav id="navbar">
+    <div class="logo"><div class="logo-dot"></div>PrachanBin</div>
+    <div class="nav-links">
+      <a href="../index.html">Overview</a>
+      <a href="pitch.html">Pitch Data</a>
+      <a href="qr-result.html">QR Demo</a>
+      <a href="cost.html" class="active">Cost & ROI</a>
+    </div>
+  </nav>
+
+  <div class="cost-page">
+    <div class="section-title reveal">💰 Cost Breakdown — Maximum Optimization</div>
+
+    <div class="compare-hero reveal">
+      <div class="cc v1">
+        <div class="cc-label">Version 1 · Original</div>
+        <div class="cc-num">9,850฿</div>
+        <div class="cc-sub">Stainless + Solar + 4G SIM</div>
+      </div>
+      <div class="arr">→<span>-32%</span></div>
+      <div class="cc v2">
+        <div class="cc-label">Version 2 · HDPE + WiFi</div>
+        <div class="cc-num">6,670฿</div>
+        <div class="cc-sub">HDPE + WiFi + TU Labor</div>
+      </div>
+      <div class="arr">→<span>-72%</span></div>
+      <div class="cc v3">
+        <div class="cc-label">Version 3 · Ultra Lean ✅</div>
+        <div class="cc-num">1,990฿</div>
+        <div class="cc-sub">ถังเก่า + บ้านหม้อ + TU Labor</div>
+      </div>
+    </div>
+
+    <div class="cost-block reveal">
+      <div class="cost-block-hd">
+        <div class="cbh-t">🔧 Hardware — Ultra Lean Build</div>
+        <div class="cbh-s">รวม 1,490 บาท</div>
+      </div>
+      <table>
+        <thead><tr><th>รายการ</th><th>แหล่งซื้อ / Spec</th><th>ราคา</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><div class="item-name">ESP32 DevKit v1 <span class="ic ic-keep">KEEP</span></div><div class="item-note">WiFi built-in ตัดไม่ได้</div></td>
+            <td>บ้านหม้อ</td>
+            <td><span class="p-new">130฿</span></td>
+          </tr>
+          <tr>
+            <td><div class="item-name">Ultrasonic HC-SR04 ×2 <span class="ic ic-down">ลดจาก 3</span></div><div class="item-note">วัดระดับขยะในช่อง wet/dry</div></td>
+            <td>บ้านหม้อ ~20฿/ชิ้น</td>
+            <td><span class="p-new">40฿</span></td>
+          </tr>
+          <tr>
+            <td><div class="item-name">IR Sensor ×1</div><div class="item-note">trigger เมื่อมีขยะตกลงมา</div></td>
+            <td>บ้านหม้อ</td>
+            <td><span class="p-new">30฿</span></td>
+          </tr>
+          <tr>
+            <td><div class="item-name">Inductive Proximity Sensor ×1</div><div class="item-note">ตรวจจับโลหะ → Gate 1</div></td>
+            <td>บ้านหม้อ</td>
+            <td><span class="p-new">60฿</span></td>
+          </tr>
+          <tr>
+            <td><div class="item-name">Load Cell + HX711 <span class="ic ic-keep">Landing Zone</span></div><div class="item-note">ชั่งน้ำหนัก + ตรวจถุง → Reject Flap</div></td>
+            <td>บ้านหม้อ</td>
+            <td><span class="p-new">50฿</span></td>
+          </tr>
+          <tr>
+            <td><div class="item-name">Servo SG90 ×3</div><div class="item-note">Gate 1 (โลหะ) + Gate 2 (wet/dry) + Reject Flap</div></td>
+            <td>บ้านหม้อ ~45฿/ชิ้น</td>
+            <td><span class="p-new">135฿</span></td>
+          </tr>
+          <tr>
+            <td><div class="item-name">LED ×3 + Resistor pack</div><div class="item-note">แสดงสถานะแต่ละช่อง</div></td>
+            <td>บ้านหม้อ</td>
+            <td><span class="p-new">20฿</span></td>
+          </tr>
+          <tr>
+            <td><div class="item-name">TFT LCD 2.4" (QR Dynamic) <span class="ic ic-keep">Core Feature</span></div><div class="item-note">แสดง QR Session ID + ประเภทขยะ</div></td>
+            <td>บ้านหม้อ / Shopee</td>
+            <td><span class="p-new">200฿</span></td>
+          </tr>
+          <tr>
+            <td><div class="item-name">Power Adapter 5V/1A</div><div class="item-note">ใช้ไฟสาธารณะแทน Solar</div></td>
+            <td>บ้านหม้อ</td>
+            <td><span class="p-new">80฿</span></td>
+          </tr>
+          <tr>
+            <td><div class="item-name">ตัวถัง <span class="ic ic-free">ถังเก่าดัดแปลง</span></div><div class="item-note">ถังพลาสติกสี่เหลี่ยมมนมุม + แผ่น PVC กั้นช่อง + ลิ้นชัก 3 ใบ</div></td>
+            <td>ถังพลาสติกทั่วไป</td>
+            <td><span class="p-new">300฿</span></td>
+          </tr>
+          <tr>
+            <td><div class="item-name">PVC Sheet (Gate + Landing Zone)</div><div class="item-note">ตัดทำ Gate 1, Gate 2, Reject Flap, Landing Platform</div></td>
+            <td>ร้านวัสดุก่อสร้าง</td>
+            <td><span class="p-new">60฿</span></td>
+          </tr>
+          <tr>
+            <td><div class="item-name">Bearing ×2 + กล่อง Junction กันน้ำ</div><div class="item-note">ยึด shaft Gate ไม่ให้แกว่ง + ป้องกัน ESP32 จากฝน</div></td>
+            <td>บ้านหม้อ</td>
+            <td><span class="p-new">60฿</span></td>
+          </tr>
+          <tr>
+            <td><div class="item-name">Vinyl Sticker + QR Sticker</div><div class="item-note">ดีไซน์ตามพื้นที่ + QR Static สำรอง</div></td>
+            <td>ร้านปริ้นท์ทั่วไป</td>
+            <td><span class="p-new">150฿</span></td>
+          </tr>
+          <tr>
+            <td><div class="item-name">Misc (สาย Dupont, Resistor, เทป)</div></td>
+            <td>บ้านหม้อ</td>
+            <td><span class="p-new">175฿</span></td>
+          </tr>
+          <tr class="subtotal">
+            <td colspan="2"><strong>รวม Hardware</strong></td>
+            <td><strong>1,490฿</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cost-block reveal">
+      <div class="cost-block-hd">
+        <div class="cbh-t">🎓 แรงงาน TU Students</div>
+        <div class="cbh-s">รวม ~500 บาท</div>
+      </div>
+      <table>
+        <thead><tr><th>บทบาท</th><th>คณะ</th><th>ค่าตอบแทน</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><div class="item-name">Firmware ESP32</div><div class="item-note">sensor logic, gate control, WiFi, QR display</div></td>
+            <td>Engineering EE/CE</td>
+            <td><span class="p-free">0฿ (Portfolio)</span></td>
+          </tr>
+          <tr>
+            <td><div class="item-name">Web + Dashboard</div><div class="item-note">GitHub Pages + Firebase realtime</div></td>
+            <td>CS / Digital Commerce</td>
+            <td><span class="p-free">0฿ (Intern)</span></td>
+          </tr>
+          <tr>
+            <td><div class="item-name">ประกอบ + ติดตั้ง</div><div class="item-note">ค่าขนส่ง + อาหาร + misc</div></td>
+            <td>Mixed TU team</td>
+            <td><span class="p-new">~500฿/ถัง</span></td>
+          </tr>
+          <tr class="subtotal">
+            <td colspan="2"><strong>รวมค่าแรง</strong></td>
+            <td><strong style="color:var(--green)">~500฿</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grand reveal">
+      <div>
+        <div class="grand-title">💡 ต้นทุนรวมต่อ 1 ถัง — Ultra Lean</div>
+        <div class="grand-sub">Hardware + TU Student Labor + ถังดัดแปลง + กลไกครบ</div>
+        <div class="grand-tag">✅ ต่ำกว่า 2,000฿</div>
+      </div>
+      <div class="grand-r">
+        <div class="grand-old">เดิม 9,850฿</div>
+        <div class="grand-new">1,990฿</div>
+        <div class="grand-diff">ประหยัดรวม -7,860฿ (-80% จาก Version 1)</div>
+      </div>
+    </div>
+
+    <div class="section-title reveal">🛒 แหล่งซื้อจริง — ตลาดบ้านหม้อ</div>
+    <div class="source-block reveal">
+      <div class="source-title">📍 ตลาดไฟฟ้าบ้านหม้อ — ใกล้พระนคร ~2 กม.</div>
+      <div class="source-grid">
+        <div class="source-item">
+          <div class="si-shop">🏪 Electronics</div>
+          <div class="si-item">ESP32 DevKit</div><div class="si-price">~130฿</div>
+          <div class="si-item">HC-SR04</div><div class="si-price">~18–25฿/ชิ้น</div>
+          <div class="si-item">IR Sensor</div><div class="si-price">~25–35฿</div>
+          <div class="si-item">Inductive Sensor</div><div class="si-price">~50–70฿</div>
+        </div>
+        <div class="source-item">
+          <div class="si-shop">🏪 Servo & Motor</div>
+          <div class="si-item">SG90 Servo</div><div class="si-price">~40–50฿/ชิ้น</div>
+          <div class="si-item">Load Cell + HX711</div><div class="si-price">~45–60฿</div>
+          <div class="si-item">TFT LCD 2.4"</div><div class="si-price">~180–220฿</div>
+          <div class="si-item">Power Adapter 5V</div><div class="si-price">~70–90฿</div>
+        </div>
+        <div class="source-item">
+          <div class="si-shop">🏪 Misc & Wire</div>
+          <div class="si-item">Dupont wire (40 เส้น)</div><div class="si-price">~30฿</div>
+          <div class="si-item">Bearing เล็ก ×2</div><div class="si-price">~15–20฿</div>
+          <div class="si-item">Junction Box กันน้ำ</div><div class="si-price">~40–50฿</div>
+          <div class="si-item">LED + Resistor pack</div><div class="si-price">~20฿</div>
+        </div>
+      </div>
+      <div style="margin-top:0.8rem;font-size:0.78rem;color:var(--muted);background:var(--surface);padding:0.7rem 1rem;border-radius:8px;">
+        💡 บ้านหม้อถูกกว่า Shopee/Lazada ประมาณ 30–50% และอยู่ห่างจากพระนครแค่ ~2 กม.
+      </div>
+    </div>
+
+    <div class="section-title reveal">🚀 งบรวม Pilot 5 ถัง</div>
+    <div class="pilot-grid reveal">
+      <div class="pilot-card">
+        <div class="pilot-hd">📦 Version 1 (เดิม)</div>
+        <div class="pilot-line"><span>Hardware × 5</span><span>49,250฿</span></div>
+        <div class="pilot-line"><span>Software</span><span>3,000฿</span></div>
+        <div class="pilot-line"><span>Campaign</span><span>55,000฿</span></div>
+        <div class="pilot-line"><span>Labor/Misc</span><span>6,600฿</span></div>
+        <div class="pilot-total"><span>รวมเดิม</span><span class="pilot-total-num" style="color:var(--amber)">113,850฿</span></div>
+      </div>
+      <div class="pilot-card hl">
+        <div class="pilot-hd">✅ Version 3 Ultra Lean</div>
+        <div class="pilot-line"><span>Hardware × 5 ถัง</span><span>7,450฿</span></div>
+        <div class="pilot-line"><span>Software (GitHub Pages)</span><span>0฿</span></div>
+        <div class="pilot-line"><span>Campaign (Micro-influencer)</span><span>20,000฿</span></div>
+        <div class="pilot-line"><span>Labor/Misc</span><span>2,500฿</span></div>
+        <div class="pilot-total"><span>รวมใหม่</span><span class="pilot-total-num">29,950฿</span></div>
+      </div>
+    </div>
+
+    <div style="background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.2);border-radius:14px;padding:1.1rem 1.4rem;margin-bottom:2.5rem;display:flex;justify-content:space-between;align-items:center" class="reveal">
+      <div>
+        <div style="font-weight:700">🎉 ประหยัดรวมทั้งโปรเจกต์</div>
+        <div style="font-size:0.78rem;color:var(--muted);margin-top:0.2rem">เทียบกับ Version 1 (113,850฿)</div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-family:'Space Mono',monospace;font-size:2rem;font-weight:700;color:var(--green)">-83,900฿</div>
+        <div style="font-size:0.75rem;color:var(--muted)">ลดลง 74% จาก Version 1</div>
+      </div>
+    </div>
+
+    <div class="section-title reveal">📈 ROI & Revenue Streams</div>
+    <div class="roi-grid reveal">
+      <div class="roi-card"><div class="roi-num">+7,200฿</div><div class="roi-label">รายได้จาก Circular Loop/เดือน (5 ถัง)</div></div>
+      <div class="roi-card"><div class="roi-num">4 เดือน</div><div class="roi-label">คืนทุน Hardware เร็วกว่า Version 1 มาก</div></div>
+      <div class="roi-card"><div class="roi-num">Year 1</div><div class="roi-label">Profitable โดยไม่ต้องพึ่ง Grant เลย</div></div>
+    </div>
+
+    <div class="fund-block reveal">
+      <div class="fund-title">📌 แหล่งทุนที่เป็นไปได้</div>
+      <div class="fund-grid">
+        <div class="fund-item">🏛️ BMA — งบสิ่งแวดล้อม + "บ้านนี้ไม่เทรวม"</div>
+        <div class="fund-item">🌏 UNDP Thailand Sustainable Tourism</div>
+        <div class="fund-item">🏫 TU Social Innovation Fund</div>
+        <div class="fund-item">🏭 SCGC CSR (มี precedent กับ BMA แล้ว)</div>
+        <div class="fund-item">🗺️ TAT — ย่านท่องเที่ยวยั่งยืน</div>
+        <div class="fund-item">🌱 กองทุนสิ่งแวดล้อม กระทรวง ทส.</div>
+      </div>
+    </div>
+  </div>
+  <script src="../js/main.js"></script>
+</body>
+</html>

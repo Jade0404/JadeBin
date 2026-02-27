@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PrachanBin — Smart Waste System</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="logo">
+      <div class="logo-dot"></div>
+      PrachanBin
+    </div>
+    <div class="nav-links">
+      <a href="index.html" class="active">Overview</a>
+      <a href="pages/pitch.html">Pitch Data</a>
+      <a href="pages/qr-result.html">QR Demo</a>
+      <a href="pages/cost.html">Cost & ROI</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <div class="hero-tag">🏆 Tha Prachan Case Competition 2026</div>
+      <h1>Smart Bin<br>สำหรับ<br><span class="accent">พระนคร</span></h1>
+      <p>ระบบถังขยะอัจฉริยะที่แยกขยะอัตโนมัติ พร้อม QR Code รายงานผลทันที สร้างจิตสำนึกผ่าน Gamification เพื่อย่านเก่าที่ยั่งยืน</p>
+      <div class="tag-row">
+        <span class="tag green">🔬 IoT Sensor</span>
+        <span class="tag amber">🤖 Auto-Sort</span>
+        <span class="tag blue">📱 QR Report</span>
+        <span class="tag green">♻️ Circular Economy</span>
+      </div>
+      <div class="hero-btns">
+        <a href="pages/pitch.html" class="btn-primary">ดู Pitch Data →</a>
+        <a href="pages/qr-result.html" class="btn-secondary">ทดลอง QR Demo</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <canvas id="binCanvas" width="420" height="400"></canvas>
+      <div class="bin-hint">DRAG TO ROTATE · SCROLL TO ZOOM</div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-strip">
+    <div class="stat-cell">
+      <div class="stat-num">9,238</div>
+      <div class="stat-label">ตัน/วัน ขยะกรุงเทพฯ</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">49%</div>
+      <div class="stat-label">คือขยะอาหาร</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">16,800</div>
+      <div class="stat-label">ตัน/ปี พลาสติกในย่านท่องเที่ยว</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">$2.73B</div>
+      <div class="stat-label">ตลาด Smart Waste โลก (2024)</div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <section class="section">
+    <h2 class="section-title">วิธีการทำงาน</h2>
+    <div class="steps">
+      <div class="step-line"></div>
+      <div class="step"><div class="step-icon">🗑️<span class="snum">1</span></div><h3>ทิ้งขยะ</h3><p>ไม่ต้องแยกเอง ทิ้งรวมช่องเดียว</p></div>
+      <div class="step"><div class="step-icon">🔍<span class="snum">2</span></div><h3>Sensor ตรวจจับ</h3><p>IR + Weight Sensor วิเคราะห์</p></div>
+      <div class="step"><div class="step-icon">⚡<span class="snum">3</span></div><h3>แยกอัตโนมัติ</h3><p>Servo Motor ส่งขยะถูกช่อง</p></div>
+      <div class="step"><div class="step-icon">📱<span class="snum">4</span></div><h3>QR Code ขึ้น</h3><p>"You just saved the world!"</p></div>
+      <div class="step"><div class="step-icon">🌍<span class="snum">5</span></div><h3>ดูผลกระทบ</h3><p>สรุปขยะ + impact + ลิงก์เว็บ</p></div>
+    </div>
+  </section>
+
+  <script src="js/bin3d.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

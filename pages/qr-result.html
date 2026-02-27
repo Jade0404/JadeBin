@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Result — PrachanBin</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body { background: linear-gradient(135deg,#050f07,#0a1a0d); }
+    .qr-wrap { max-width:480px; margin:0 auto; padding:1rem 1rem 3rem; }
+    .qr-card { background:var(--card); border-radius:24px; border:1px solid var(--border); overflow:hidden; margin-bottom:1.2rem; }
+    .qr-card-header { background:linear-gradient(135deg,#00ff88,#00c868); padding:1.8rem; text-align:center; color:#000; }
+    .qr-emoji { font-size:2.5rem; margin-bottom:0.4rem; }
+    .qr-card-header h2 { font-size:1.5rem; font-weight:900; }
+    .qr-card-header p { font-size:0.85rem; opacity:0.7; margin-top:0.2rem; }
+    .qr-body { padding:1.5rem; }
+    .session-box { background:var(--surface); border-radius:12px; padding:1rem; text-align:center; margin-bottom:1.2rem; }
+    .s-label { font-size:0.65rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em; }
+    .s-id { font-family:'Space Mono',monospace; font-size:1.1rem; color:var(--green); font-weight:700; }
+    .s-loc { font-size:0.75rem; color:var(--muted); margin-top:0.2rem; }
+
+    /* waste list */
+    .waste-section-title { font-size:0.82rem; color:var(--muted); margin-bottom:0.7rem; }
+    .waste-list { list-style:none; display:flex; flex-direction:column; gap:0.7rem; margin-bottom:1.2rem; }
+    .wi { display:flex; align-items:center; gap:0.8rem; border-radius:10px; padding:0.75rem 1rem; animation:slideIn 0.5s ease forwards; opacity:0; border-left:4px solid; }
+    @keyframes slideIn { from{transform:translateX(-20px);opacity:0} to{transform:translateX(0);opacity:1} }
+    .wi:nth-child(1){animation-delay:0.1s} .wi:nth-child(2){animation-delay:0.25s}
+    .wi:nth-child(3){animation-delay:0.4s}  .wi:nth-child(4){animation-delay:0.55s}
+
+    /* สีตามมาตรฐานถังขยะไทย */
+    .wi-organic { background:rgba(76,175,80,0.1);  border-color:#4caf50; }
+    .wi-recycle { background:rgba(255,206,0,0.1);  border-color:#ffce00; }
+    .wi-general { background:rgba(33,150,243,0.1); border-color:#2196f3; }
+    .wi-danger  { background:rgba(255,77,109,0.1); border-color:#ff4d6d; }
+
+    .wi-icon { font-size:1.4rem; }
+    .wi-info { flex:1; }
+    .wi-name { font-size:0.88rem; font-weight:600; }
+    .wi-weight { font-size:0.72rem; color:var(--muted); margin-top:0.1rem; }
+
+    /* badge ชื่อประเภท + สีถัง */
+    .wi-right { display:flex; flex-direction:column; align-items:flex-end; gap:0.3rem; }
+    .badge { display:inline-block; padding:0.15rem 0.55rem; border-radius:999px; font-size:0.68rem; font-weight:700; }
+    .b-organic { background:rgba(76,175,80,0.25);  color:#4caf50; }
+    .b-recycle  { background:rgba(255,206,0,0.25); color:#ccaa00; }
+    .b-general  { background:rgba(33,150,243,0.25);color:#2196f3; }
+    .b-danger   { background:rgba(255,77,109,0.25);color:#ff4d6d; }
+
+    /* bin color guide */
+    .bin-guide { display:flex; align-items:center; gap:0.4rem; font-size:0.68rem; color:var(--muted); }
+    .bin-dot { width:10px; height:10px; border-radius:2px; flex-shrink:0; }
+
+    /* impact */
+    .impact-row { display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.6rem; text-align:center; margin-bottom:1.2rem; background:rgba(0,255,136,0.06); border:1px solid rgba(0,255,136,0.15); border-radius:12px; padding:1rem; }
+    .ir-num { font-family:'Space Mono',monospace; font-size:1.2rem; font-weight:700; color:var(--green); }
+    .ir-label { font-size:0.65rem; color:var(--muted); margin-top:0.2rem; }
+
+    /* next time guide */
+    .next-time { background:var(--surface); border-radius:12px; padding:1rem 1.2rem; margin-bottom:1.2rem; border:1px solid var(--border); }
+    .nt-title { font-size:0.8rem; font-weight:700; margin-bottom:0.7rem; color:var(--green); }
+    .nt-row { display:flex; align-items:center; gap:0.7rem; padding:0.4rem 0; border-bottom:1px solid var(--border); font-size:0.8rem; }
+    .nt-row:last-child { border-bottom:none; }
+    .nt-bin { width:18px; height:18px; border-radius:4px; flex-shrink:0; }
+    .nt-label { color:var(--muted); min-width:60px; }
+    .nt-items { color:var(--text); }
+
+    .share-banner { font-family:'Space Mono',monospace; font-size:0.78rem; color:var(--green); text-align:center; padding:0.8rem 1rem; background:#0f1e11; border-radius:10px; border:1px solid rgba(0,255,136,0.15); margin-bottom:1.2rem; animation:glow 3s ease infinite; }
+    @keyframes glow { 0%,100%{box-shadow:0 0 10px rgba(0,255,136,0.1)} 50%{box-shadow:0 0 25px rgba(0,255,136,0.3)} }
+    .qr-btns { display:flex; flex-direction:column; gap:0.6rem; }
+    .qr-btns .btn-primary { text-align:center; padding:1rem; border-radius:12px; font-size:1rem; }
+    .qr-btns .btn-secondary { text-align:center; padding:1rem; border-radius:12px; font-size:1rem; border:1px solid var(--border); }
+    .community-card { background:var(--card); border-radius:16px; border:1px solid var(--border); padding:1.3rem; }
+    .cc-head { font-size:0.82rem; color:var(--muted); margin-bottom:0.8rem; }
+    .live-row { display:flex; align-items:center; gap:0.6rem; font-size:0.85rem; margin-bottom:0.6rem; }
+    .live-dot { width:8px; height:8px; border-radius:50%; background:var(--green); animation:pulse 1s infinite; }
+    .progress-bar { height:6px; background:var(--border); border-radius:999px; overflow:hidden; }
+    .progress-fill { height:100%; background:linear-gradient(90deg,var(--green),var(--blue)); border-radius:999px; animation:fill 2s ease forwards; }
+    @keyframes fill { from{width:0} to{width:73%} }
+    .progress-labels { display:flex; justify-content:space-between; font-size:0.68rem; color:var(--muted); margin-top:0.3rem; }
+  </style>
+</head>
+<body>
+  <nav id="navbar">
+    <div class="logo"><div class="logo-dot"></div>PrachanBin</div>
+    <div class="nav-links">
+      <a href="../index.html">Overview</a>
+      <a href="pitch.html">Pitch Data</a>
+      <a href="qr-result.html" class="active">QR Demo</a>
+      <a href="cost.html">Cost & ROI</a>
+    </div>
+  </nav>
+
+  <div class="qr-wrap">
+    <div class="qr-card">
+      <div class="qr-card-header">
+        <div class="qr-emoji">🎉</div>
+        <h2>You just saved the world!</h2>
+        <p>ขอบคุณที่แยกขยะกับ PrachanBin</p>
+      </div>
+      <div class="qr-body">
+        <div class="session-box">
+          <div class="s-label">Session ID</div>
+          <div class="s-id">#PCN-2026-047821</div>
+          <div class="s-loc">📍 ท่าพระจันทร์ · 21 ก.พ. 2026 · 14:32 น.</div>
+        </div>
+
+        <div class="waste-section-title">ขยะที่คุณทิ้งในครั้งนี้</div>
+        <ul class="waste-list">
+          <li class="wi wi-organic">
+            <span class="wi-icon">🍌</span>
+            <div class="wi-info">
+              <div class="wi-name">เปลือกกล้วย</div>
+              <div class="wi-weight">~80g</div>
+            </div>
+            <div class="wi-right">
+              <span class="badge b-organic">อินทรีย์</span>
+              <div class="bin-guide"><div class="bin-dot" style="background:#4caf50"></div>ถังสีเขียว</div>
+            </div>
+          </li>
+          <li class="wi wi-recycle">
+            <span class="wi-icon">🥤</span>
+            <div class="wi-info">
+              <div class="wi-name">ขวดพลาสติก PET</div>
+              <div class="wi-weight">~30g</div>
+            </div>
+            <div class="wi-right">
+              <span class="badge b-recycle">รีไซเคิล</span>
+              <div class="bin-guide"><div class="bin-dot" style="background:#ffce00"></div>ถังสีเหลือง</div>
+            </div>
+          </li>
+          <li class="wi wi-general">
+            <span class="wi-icon">🍱</span>
+            <div class="wi-info">
+              <div class="wi-name">กล่องข้าว (โฟม)</div>
+              <div class="wi-weight">~150g</div>
+            </div>
+            <div class="wi-right">
+              <span class="badge b-general">ทั่วไป</span>
+              <div class="bin-guide"><div class="bin-dot" style="background:#2196f3"></div>ถังสีน้ำเงิน</div>
+            </div>
+          </li>
+          <li class="wi wi-general">
+            <span class="wi-icon">📄</span>
+            <div class="wi-info">
+              <div class="wi-name">กระดาษทิชชู่</div>
+              <div class="wi-weight">~20g</div>
+            </div>
+            <div class="wi-right">
+              <span class="badge b-general">ทั่วไป</span>
+              <div class="bin-guide"><div class="bin-dot" style="background:#2196f3"></div>ถังสีน้ำเงิน</div>
+            </div>
+          </li>
+        </ul>
+
+        <!-- ครั้งถัดไปทิ้งถังสีไหน -->
+        <div class="next-time">
+          <div class="nt-title">💡 ครั้งถัดไปที่ถังปกติ ทิ้งถังสีไหน?</div>
+          <div class="nt-row">
+            <div class="nt-bin" style="background:#4caf50"></div>
+            <div class="nt-label">เขียว</div>
+            <div class="nt-items">เศษอาหาร · เปลือกผลไม้ · ใบไม้ · ย่อยสลายได้</div>
+          </div>
+          <div class="nt-row">
+            <div class="nt-bin" style="background:#ffce00"></div>
+            <div class="nt-label">เหลือง</div>
+            <div class="nt-items">พลาสติก · กระดาษ · แก้ว · กระป๋อง · รีไซเคิลได้</div>
+          </div>
+          <div class="nt-row">
+            <div class="nt-bin" style="background:#2196f3"></div>
+            <div class="nt-label">น้ำเงิน</div>
+            <div class="nt-items">โฟม · ถุงพลาสติก · ขยะทั่วไปที่รีไซเคิลไม่ได้</div>
+          </div>
+          <div class="nt-row">
+            <div class="nt-bin" style="background:#ff4d6d"></div>
+            <div class="nt-label">แดง</div>
+            <div class="nt-items">แบตเตอรี่ · หลอดไฟ · ยา · สารเคมี · อันตราย</div>
+          </div>
+        </div>
+
+        <div class="impact-row">
+          <div><div class="ir-num">280g</div><div class="ir-label">ขยะทั้งหมด</div></div>
+          <div><div class="ir-num">0.12kg</div><div class="ir-label">CO₂ ลดได้</div></div>
+          <div><div class="ir-num">+15</div><div class="ir-label">EcoPoints</div></div>
+        </div>
+
+        <div class="share-banner">🌍 "You saved 0.12kg CO₂ at Tha Prachan!"</div>
+
+        <div class="qr-btns">
+          <a href="../index.html" class="btn-primary">🌐 ดูเว็บไซต์หลัก PrachanBin</a>
+          <a href="#" class="btn-secondary" onclick="navigator.share ? navigator.share({title:'PrachanBin',text:'ฉันเพิ่งช่วยโลกที่พระนคร!',url:location.href}) : alert('Copy link: '+location.href)">📤 แชร์ผลลัพธ์ของคุณ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="community-card">
+      <div class="cc-head">🏘️ Community Dashboard · พระนคร · วันนี้</div>
+      <div class="live-row">
+        <div class="live-dot"></div>
+        <span>รวมกันลดขยะได้ <strong style="color:var(--green)">2,341 kg</strong> แล้ววันนี้</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <div class="progress-labels"><span>0 kg</span><span>73% ของเป้า 3,200 kg/วัน</span><span>3,200 kg</span></div>
+    </div>
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
