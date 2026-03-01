@@ -23,4 +23,4 @@ prachanbin/
     └── cost.html       ← Cost breakdown & ROI
 ```
 
-*Built for Tha Prachan Case Competition, Thammasat University 2026*
+*Built for ThaPrachan Case Competition, Thammasat University 2026*

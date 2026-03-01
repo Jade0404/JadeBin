@@ -209,9 +209,9 @@
   .findings-grid { grid-template-columns: 1fr; }
 }
 
-/* ══════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    CIRCULAR ECONOMY LOOP
-══════════════════════════════════ */
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .ce-flow {
   display: flex; align-items: center; flex-wrap: wrap;
   gap: 0.6rem; margin-bottom: 2rem;
@@ -382,4 +382,38 @@
 
 @media (max-width: 700px) {
   .mech-reject-grid { grid-template-columns: 1fr; }
+}
+
+/* â”€â”€ BUSINESS MODEL NEW STYLES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+/* Value Proposition Grid */
+.bm-value { margin-top: 2rem; }
+.bm-value-grid {
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; margin-top: 1rem;
+}
+.bm-val-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 16px; padding: 1.4rem; transition: all 0.3s;
+}
+.bm-val-card:hover { border-color: rgba(0,255,136,0.25); transform: translateY(-3px); }
+.bm-val-icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.bm-val-who { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 0.2rem; }
+.bm-val-sub { font-size: 0.72rem; color: var(--green); margin-bottom: 0.8rem; }
+.bm-val-list {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 0.4rem;
+}
+.bm-val-list li {
+  font-size: 0.8rem; color: var(--text); line-height: 1.4;
+  padding-left: 1rem; position: relative;
+}
+.bm-val-list li::before {
+  content: "â–¸"; position: absolute; left: 0; color: var(--green); font-size: 0.7rem;
+}
+
+@media (max-width: 900px) {
+  .bm-value-grid { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 600px) {
+  .bm-value-grid { grid-template-columns: 1fr; }
 }

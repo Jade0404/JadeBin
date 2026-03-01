@@ -1,4 +1,4 @@
-/* ===== bin3d.js — Single Smart Bin with embedded screen & trash slot ===== */
+/* ===== bin3d.js â€” Single Smart Bin with embedded screen & trash slot ===== */
 (function () {
   const canvas = document.getElementById('binCanvas');
   if (!canvas) return;
@@ -135,35 +135,35 @@
   };
 
   function buildScene() {
-    // ── Base slab ──
+    // â”€â”€ Base slab â”€â”€
     box(BX-12, BY+BH, BZ-12, BW+24, 12, BD+24,
       ['#142618','#0a1a0e','#0e2014','#0e2014','#1a3020','#080d09']);
 
-    // ── Body ──
+    // â”€â”€ Body â”€â”€
     box(BX, BY, BZ, BW, BH, BD,
       [C.bF, C.bB, C.bS, C.bS, C.bT, C.bBot]);
 
-    // ── Green accent stripe ──
+    // â”€â”€ Green accent stripe â”€â”€
     box(BX+12, BY+BH-20, BZ-0.5, BW-24, 7, 1,
       ['#00ff8826','#00ff8810','#00ff8810','#00ff8810','#00ff8810','#00ff8810']);
 
-    // ── Screen bezel (inset panel on front) ──
+    // â”€â”€ Screen bezel (inset panel on front) â”€â”€
     box(SX-6, SY-6, BZ-3.5, SW+12, SH+12, 5,
       [C.bezF, C.bezS, C.bezS, C.bezS, C.bezS, C.bezS]);
 
-    // ── Slot housing on lid (raised ring around slot) ──
+    // â”€â”€ Slot housing on lid (raised ring around slot) â”€â”€
     box(SLOT_X-7, SLOT_Y-5, SLOT_Z-6, SLOT_W+14, 8, SLOT_D+12,
       ['#1f3d24','#142a18','#192f1e','#192f1e','#244a2a','#0e1f12']);
 
-    // ── Slot opening (dark hole) ──
+    // â”€â”€ Slot opening (dark hole) â”€â”€
     box(SLOT_X, SLOT_Y, SLOT_Z, SLOT_W, SLOT_H, SLOT_D,
       [C.slotT, C.slotT, C.slotS, C.slotS, '#010402', C.slotT]);
 
-    // ── Lid ──
+    // â”€â”€ Lid â”€â”€
     box(LX, LY, LZ, LW, LH, LD,
       [C.lF, C.lB, C.lS, C.lS, C.lT, C.bBot]);
 
-    // ── Lid handle (small bar on top) ──
+    // â”€â”€ Lid handle (small bar on top) â”€â”€
     box(-18, LY-10, -10, 36, 10, 20,
       ['#2a6832','#1a4422','#22572a','#22572a','#30783a','#152d1a']);
   }
